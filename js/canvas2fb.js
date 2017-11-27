@@ -98,7 +98,7 @@
                                 function (response) {
                                     if (response && !response.error) {
                                         /* handle the result */
-                                        alert("Posted story to facebook successfully");
+                                        console.log("Posted story to facebook successfully");
                                         console.log("Posted story to facebook");
                                         console.log(response);
                                     } else {
