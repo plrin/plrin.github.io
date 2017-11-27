@@ -81,51 +81,52 @@
                 console.log("success: ", data);
 
                 // Get image source url
-                // FB.api(
-                //     "/" + data.id + "?fields=images",
-                //     function (response) {
-                //         if (response && !response.error) {
-                //             console.log("response");
-                //             console.log(response);
-                //             console.log(response.images[0].source);
+                FB.api(
+                    "/" + data.id + "?fields=images",
+                    function (response) {
+                        if (response && !response.error) {
+                            console.log("response");
+                            console.log(response);
+                            console.log(response.images[0].source);
 
-                //             // Create facebook post using image
-                //             FB.api( "/me/feed", "POST",
-                //                 {
-                //                     "message": "my message inside js + image link: " + response.images[0].source,
-                //                     "picture": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
-                //                     "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
-                //                     "link": window.location.href,
-                //                     "name": 'Look at the cute panda!',
-                //                     "description": message,
-                //                     "privacy": {
-                //                         value: 'SELF'
-                //                     }
-                //                 },
-                //                 function (response) {
-                //                     if (response && !response.error) {
-                //                         /* handle the result */
-                //                         console.log("Posted story to facebook successfully");
-                //                         console.log("Posted story to facebook");
-                //                         console.log(response);
-                //                     } else {
-                //                         console.log("Failed to post story");
-                //                         console.log(response);
-                //                     }
-                //                 }
-                //             );
-                //         }
-                //     }
-                // );
+                            // Create facebook post using image
+                            // FB.api( "/me/feed", "POST",
+                            //     {
+                            //         "message": "my message inside js + image link: " + response.images[0].source,
+                            //         "picture": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
+                            //         "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
+                            //         "link": window.location.href,
+                            //         "name": 'Look at the cute panda!',
+                            //         "description": message,
+                            //         "privacy": {
+                            //             value: 'SELF'
+                            //         }
+                            //     },
+                            //     function (response) {
+                            //         if (response && !response.error) {
+                            //             /* handle the result */
+                            //             console.log("Posted story to facebook successfully");
+                            //             console.log("Posted story to facebook");
+                            //             console.log(response);
+                            //         } else {
+                            //             console.log("Failed to post story");
+                            //             console.log(response);
+                            //         }
+                            //     }
+                            // );
 
-                FB.ui({
-                  method: 'feed',
-                  link: 'http://www.elbkapitaene.de',
-                  picture: 'http://www.elbkapitaene.de/fileadmin/assets/images/logos/splash.png',
-                  name: 'elbkapitäne',
-                  caption: 'Internetagentur Hamburg',
-                  description: 'Und hier steht ein funny Text.'
-                }, null);
+                            FB.ui({
+                              method: 'feed',
+                              link: 'https://plrin.github.io/',
+                              picture: response.images[0].source,
+                              name: 'canvas2fb name',
+                              caption: 'caption',
+                              description: 'description text'
+                            }, null);
+                        }
+                    }
+                );
+
             },
             error: function (shr, status, data) {
                 console.log("error " + data + " Status " + shr.status);
