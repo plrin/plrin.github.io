@@ -92,9 +92,9 @@
                             // Create facebook post using image
                             FB.api( "/me/feed", "POST",
                                 {
-                                    "message": "my message inside js",
+                                    "message": "my message inside js + image link: " + response.images[0].source,
                                     "picture": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
-                                    // "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
+                                    "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
                                     "link": window.location.href,
                                     "name": 'Look at the cute panda!',
                                     "description": message,
