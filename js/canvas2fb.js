@@ -68,6 +68,8 @@
         fd.append("access_token", token);
         fd.append("source", imageData);
         fd.append("no_story", true);
+        console.log("fd");
+        console.log(fd);
 
         // Upload image to facebook without story(post to feed)
         $.ajax({
