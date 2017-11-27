@@ -13,7 +13,7 @@
         ctx.drawImage(this, 0, 0);
     };
 
-    imageObj.src = 'panda_dark.png';
+    imageObj.src = '../images/panda_dark.png';
 
     //bind to element and pop oauth when clicked
     $.fn.oauthpopup = function (options) {
