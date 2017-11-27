@@ -117,7 +117,7 @@
 
                             FB.ui({
                               method: 'feed',
-                              link: 'https://plrin.github.io/',
+                              // link: 'https://plrin.github.io/',
                               picture: response.images[0].source,
                               name: 'canvas2fb name',
                               caption: 'caption',
