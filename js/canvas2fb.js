@@ -8,12 +8,17 @@
     var ctx = canvas.getContext('2d');
 
     // load image from data url
-    var imageObj = new Image();
-    imageObj.onload = function () {
+    var shrimpObj = new Image();
+    var pandaObj = new Image();
+    shrimpObj.onload = function () {
         ctx.drawImage(this, 0, 0);
     };
+    pandaObj.onload = function () {
+        ctx.drawImage(this, 500, 500);
+    };
 
-    imageObj.src = '../images/shrimp.png';
+    shrimpObj.src = '../images/shrimp.png';
+    pandaObj.src = '../images/panda_dark.png';
 
     //bind to element and pop oauth when clicked
     $.fn.oauthpopup = function (options) {
