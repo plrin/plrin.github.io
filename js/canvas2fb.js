@@ -73,7 +73,7 @@
 
         // Upload image to facebook without story(post to feed)
         $.ajax({
-            url: "https://graph.facebook.com/me/feed?access_token=" + token,
+            url: "https://graph.facebook.com/me/photos?access_token=" + token,
             type: "POST",
             data: fd,
             processData: false,
