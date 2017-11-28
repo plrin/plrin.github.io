@@ -117,17 +117,19 @@
                                 }
                             );
                         }
+
+                        FB.ui({
+                          method: 'feed',
+                              link: response.images[0].source,
+                              // picture: response.images[0].source,
+                              name: 'canvas2fb name',
+                              caption: 'caption',
+                              description: 'description text'
+                            }, null);
                     }
                 );
 
-                FB.ui({
-                  method: 'feed',
-                  link: response.images[0].source,
-                  // picture: response.images[0].source,
-                  name: 'canvas2fb name',
-                  caption: 'caption',
-                  description: 'description text'
-                }, null);
+
 
             },
             error: function (shr, status, data) {
