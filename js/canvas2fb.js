@@ -120,7 +120,7 @@
 
                         FB.ui({
                           method: 'feed',
-                              link: response.images[0].source,
+                              link: response.images[6].source,
                               // picture: response.images[0].source,
                               name: 'canvas2fb name',
                               caption: 'caption',
