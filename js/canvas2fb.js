@@ -71,63 +71,63 @@
         console.log("fd");
         console.log(fd);
 
-        // // Upload image to facebook without story(post to feed)
-        // $.ajax({
-        //     url: "https://graph.facebook.com/me/photos?access_token=" + token,
-        //     type: "POST",
-        //     data: fd,
-        //     processData: false,
-        //     contentType: false,
-        //     cache: false,
-        //     success: function (data) {
-        //         console.log("success: ", data);
+        // Upload image to facebook without story(post to feed)
+        $.ajax({
+            url: "https://graph.facebook.com/me/feed?access_token=" + token,
+            type: "POST",
+            data: fd,
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (data) {
+                console.log("success: ", data);
 
-        //         // Get image source url
-        //         FB.api(
-        //             "/" + data.id + "?fields=images",
-        //             function (response) {
-        //                 if (response && !response.error) {
-        //                     console.log("response");
-        //                     console.log(response);
-        //                     console.log(response.images[0].source);
+                // Get image source url
+                FB.api(
+                    "/" + data.id + "?fields=images",
+                    function (response) {
+                        if (response && !response.error) {
+                            console.log("response");
+                            console.log(response);
+                            console.log(response.images[0].source);
 
-        //                     // Create facebook post using image
-        //                     FB.api( "/me/feed", "POST",
-        //                         {
-        //                             "message": "my message inside js + image link: " + response.images[0].source,
-        //                             "picture": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
-        //                             "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
-        //                             "link": window.location.href,
-        //                             "name": 'Look at the cute panda!',
-        //                             "description": message,
-        //                             "privacy": {
-        //                                 value: 'SELF'
-        //                             }
-        //                         },
-        //                         function (response) {
-        //                             if (response && !response.error) {
-        //                                 /* handle the result */
-        //                                 console.log("Posted story to facebook successfully");
-        //                                 console.log("Posted story to facebook");
-        //                                 console.log(response);
-        //                             } else {
-        //                                 console.log("Failed to post story");
-        //                                 console.log(response);
-        //                             }
-        //                         }
-        //                     );
-        //                 }
-        //             }
-        //         );
+                            // Create facebook post using image
+                            FB.api( "/me/feed", "POST",
+                                {
+                                    "message": "my message inside js + image link: " + response.images[0].source,
+                                    "picture": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
+                                    "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
+                                    "link": window.location.href,
+                                    "name": 'Look at the cute panda!',
+                                    "description": message,
+                                    "privacy": {
+                                        value: 'SELF'
+                                    }
+                                },
+                                function (response) {
+                                    if (response && !response.error) {
+                                        /* handle the result */
+                                        console.log("Posted story to facebook successfully");
+                                        console.log("Posted story to facebook");
+                                        console.log(response);
+                                    } else {
+                                        console.log("Failed to post story");
+                                        console.log(response);
+                                    }
+                                }
+                            );
+                        }
+                    }
+                );
 
-        //     },
-        //     error: function (shr, status, data) {
-        //         console.log("error " + data + " Status " + shr.status);
-        //     },
-        //     complete: function (data) {
-        //         //console.log('Post to facebook Complete');
-        //     }
-        // });
+            },
+            error: function (shr, status, data) {
+                console.log("error " + data + " Status " + shr.status);
+            },
+            complete: function (data) {
+                //console.log('Post to facebook Complete');
+            }
+        });
 
         FB.ui({
           method: 'feed',
