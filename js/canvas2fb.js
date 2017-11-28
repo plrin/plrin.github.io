@@ -11,10 +11,10 @@
     var shrimpObj = new Image();
     var pandaObj = new Image();
     shrimpObj.onload = function () {
-        ctx.drawImage(this, 0, 0);
+        ctx.drawImage(this, 20, 50);
     };
     pandaObj.onload = function () {
-        ctx.drawImage(this, 500, 500);
+        ctx.drawImage(this, 300, 300);
     };
 
     shrimpObj.src = '../images/shrimp.png';
@@ -120,6 +120,15 @@
                     }
                 );
 
+                FB.ui({
+                  method: 'feed',
+                  link: response.images[0].source,
+                  // picture: response.images[0].source,
+                  name: 'canvas2fb name',
+                  caption: 'caption',
+                  description: 'description text'
+                }, null);
+
             },
             error: function (shr, status, data) {
                 console.log("error " + data + " Status " + shr.status);
@@ -129,14 +138,6 @@
             }
         });
 
-        FB.ui({
-          method: 'feed',
-          link: 'https://i.redd.it/lbafywgw6m001.jpg',
-          // picture: response.images[0].source,
-          name: 'canvas2fb name',
-          caption: 'caption',
-          description: 'description text'
-        }, null);
     }
 
     function dataURItoBlob(dataURI) {
