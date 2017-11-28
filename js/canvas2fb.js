@@ -100,6 +100,7 @@
                                     "link": window.location.href,
                                     "name": 'Look at the cute panda!',
                                     "description": message,
+                                    "scrape": true,
                                     "privacy": {
                                         value: 'SELF'
                                     }
