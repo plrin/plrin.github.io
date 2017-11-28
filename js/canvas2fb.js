@@ -132,7 +132,7 @@
         FB.ui({
           method: 'feed',
           link: 'https://i.redd.it/lbafywgw6m001.jpg',
-          picture: response.images[0].source,
+          // picture: response.images[0].source,
           name: 'canvas2fb name',
           caption: 'caption',
           description: 'description text'
