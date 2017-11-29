@@ -97,7 +97,7 @@
                                     "message": "my message inside js + image link1: " + response.images[0].source,
                                     "picture": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
                                     // "object_attachment": response.images[0].source, // 90-Day Deprecation - https://developers.facebook.com/docs/apps/changelog
-                                    "link": window.location.href,
+                                    "link": response.images[0].source,
                                     "name": 'Look at the cute panda!',
                                     "description": message,
                                     "scrape": true,
