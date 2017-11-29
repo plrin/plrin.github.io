@@ -11,10 +11,10 @@
     var shrimpObj = new Image();
     var pandaObj = new Image();
     shrimpObj.onload = function () {
-        ctx.drawImage(this, 20, 50);
+        ctx.drawImage(this, 200, 50);
     };
     pandaObj.onload = function () {
-        ctx.drawImage(this, 300, 300);
+        ctx.drawImage(this, 100, 100);
     };
 
     shrimpObj.src = '../images/shrimp.png';
