@@ -234,11 +234,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ScrollMagic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ScrollMagic */ "../node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js");
 /* harmony import */ var ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ScrollMagic__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_page_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/page-controller */ "./js/page-controller.js");
+/* harmony import */ var better_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! better-scroll */ "../node_modules/better-scroll/dist/bscroll.esm.js");
+/* harmony import */ var _js_page_controller__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/page-controller */ "./js/page-controller.js");
 
 
 
-var pageController = new _js_page_controller__WEBPACK_IMPORTED_MODULE_2__["PageController"]();
+
+var pageController = new _js_page_controller__WEBPACK_IMPORTED_MODULE_3__["PageController"]();
 pageController.init();
 var $rules = document.querySelectorAll('[id*=rule-]');
 var rulesArray = Array.prototype.slice.call($rules);
@@ -271,7 +273,15 @@ var setRuleColor = function setRuleColor(e) {
   $ruleLine.setAttribute('data-rule-line', modulo);
 };
 
-scrollEvent();
+scrollEvent(); // init better scroll
+
+var wrapper = document.querySelector('.toc__main');
+new better_scroll__WEBPACK_IMPORTED_MODULE_2__["default"](wrapper, {
+  click: true
+});
+new better_scroll__WEBPACK_IMPORTED_MODULE_2__["default"](document.querySelector('.rule__main'), {
+  click: true
+});
 
 /***/ }),
 
